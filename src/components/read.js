@@ -39,9 +39,10 @@ export default function Read() {
                         <Table.HeaderCell>Nome</Table.HeaderCell>
                         <Table.HeaderCell>Sobrenome</Table.HeaderCell>
                         <Table.HeaderCell>Checado</Table.HeaderCell>
+                        <Table.HeaderCell>Atualizar</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
-                <Table.HeaderCell>Atualizar</Table.HeaderCell>
+                
 
                 <Table.Body>
                 {APIData.map((data) => {
