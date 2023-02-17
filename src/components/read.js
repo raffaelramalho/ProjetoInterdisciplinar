@@ -39,6 +39,8 @@ export default function Read() {
                         <Table.HeaderCell>Nome</Table.HeaderCell>
                         <Table.HeaderCell>Sobrenome</Table.HeaderCell>
                         <Table.HeaderCell>Checado</Table.HeaderCell>
+                        <Table.HeaderCell>Idade</Table.HeaderCell>
+                        <Table.HeaderCell>Email</Table.HeaderCell>
                         <Table.HeaderCell>Atualizar</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
@@ -48,15 +50,15 @@ export default function Read() {
                 {APIData.map((data) => {
                     return (
                     <Table.Row>
-                        <Table.Cell>{data.firstName}</Table.Cell>
-                        <Table.Cell>{data.lastName}</Table.Cell>
+                        <Table.Cell>{data.Nome}</Table.Cell>
+                        <Table.Cell>{data.Sobrenome}</Table.Cell>
                         <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
+                        <Table.Cell>{data.Idade}</Table.Cell>
+                        <Table.Cell>{data.Email}</Table.Cell>
                         <Link to='/update'>
                         <Table.Cell> 
-                            <Button onClick={() => setData(data)}> Atualizar </Button>
-                        </Table.Cell>
-                        <Table.Cell>
-                            <Button onClick={() => onDelete(data.id)}>Deletar</Button>
+                            <Button className='btn-confirm' onClick={() => setData(data)}> Atualizar </Button>
+                            <Button className='btn-delete' onClick={() => onDelete(data.id)}>Deletar</Button>
                         </Table.Cell>
                         </Link>
                         </Table.Row>

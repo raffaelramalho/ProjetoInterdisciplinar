@@ -36,11 +36,13 @@
   font-size: 12px !important;
 }
 
+.btn-confirm{
+  background-color: #2fb722 !important;
+  color: whitesmoke !important;
+}
+.btn-delete{
+  background-color: #b72222 !important;
+  color: whitesmoke !important;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
