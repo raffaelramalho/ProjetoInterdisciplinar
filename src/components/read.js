@@ -38,9 +38,7 @@ export default function Read() {
                     <Table.Row>
                         <Table.HeaderCell>Nome</Table.HeaderCell>
                         <Table.HeaderCell>Sobrenome</Table.HeaderCell>
-                        <Table.HeaderCell>Checado</Table.HeaderCell>
-                        <Table.HeaderCell>Idade</Table.HeaderCell>
-                        <Table.HeaderCell>Email</Table.HeaderCell>
+                        <Table.HeaderCell>DST</Table.HeaderCell>
                         <Table.HeaderCell>Atualizar</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
@@ -53,8 +51,6 @@ export default function Read() {
                         <Table.Cell>{data.Nome}</Table.Cell>
                         <Table.Cell>{data.Sobrenome}</Table.Cell>
                         <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
-                        <Table.Cell>{data.Idade}</Table.Cell>
-                        <Table.Cell>{data.Email}</Table.Cell>
                         <Link to='/update'>
                         <Table.Cell> 
                             <Button className='btn-confirm' onClick={() => setData(data)}> Atualizar </Button>

@@ -5,15 +5,18 @@ import axios from 'axios';
 export default function Create() {
     const [Nome, setFirstName] = useState('');
     const [Sobrenome, setLastName] = useState('');
+    const [Apelido, setApelido] = useState('');
     const [Idade, setIdade] = useState('');
-    const [Email, setEmail] = useState('');
+    const [Altura, setAltura] = useState('');
+    const [Telefone, setTelefone] = useState('');
     const [checkbox, setCheckbox] = useState(false);
 
     const limparCampos = () => {
         setFirstName('');
         setLastName('');
         setIdade('');
-        setEmail('');
+        setAltura('');
+        setTelefone('');
         setCheckbox(false);
     }
 
@@ -21,15 +24,17 @@ export default function Create() {
         axios.post(`https://606b320df8678400172e5d57.mockapi.io/api/v1/MockData`, {
             Nome,
             Sobrenome,
+            Apelido,
             Idade,
-            Email,
+            Altura,
+            Telefone,
             checkbox
         })
         limparCampos();
     }
     
     const verifyData = () => {
-        if (Nome === '' || Sobrenome === '' || Idade === '' || Email === '' || checkbox === false) {
+        if (Nome === '' || Sobrenome === '' || Idade === '' || Altura === '' || checkbox === false || Apelido === '' || Telefone === '') {
             alert('Preencha todos os campos');
         } else {
             postData();
@@ -39,27 +44,33 @@ export default function Create() {
     return (
         <div>
             <Form className="create-form">
-                <h2>Cadastro</h2>
-                <Form.Group>
-                    <Form.Field>
+                <h2>Cadastro de Modelos</h2>
+                <Form.Field>
                         <label>Nome</label>
-                        <input placeholder='Rafael' onChange={(e) => setFirstName(e.target.value)}/>
-                    </Form.Field>
-                    <Form.Field>
+                        <input placeholder='Gustavo' onChange={(e) => setFirstName(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
                         <label>Sobrenome</label>
-                        <input placeholder='Ramalho' onChange={(e) => setLastName(e.target.value)}/>
-                    </Form.Field>
-                </Form.Group>    
+                        <input placeholder='Delicinha' onChange={(e) => setLastName(e.target.value)}/>
+                </Form.Field>
+                <Form.Field className='field-form'>
+                    <label>Apelido da Casa</label>
+                    <input placeholder='Bumbum Gula' onChange={(e) => setApelido(e.target.value)} type='text'/>
+                </Form.Field>    
                 <Form.Field>
                     <label>Idade</label>
-                    <input placeholder='21' onChange={(e) => setIdade(e.target.value)} type='number'/>
+                    <input placeholder='21' onChange={(e) => setIdade(e.target.value)} type='number' step={.01}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>E-mail</label>
-                    <input placeholder='email@email.com' onChange={(e) => setEmail(e.target.value)} type='email'/>
+                    <label>Altura</label>
+                    <input placeholder='1,64' onChange={(e) => setAltura(e.target.value)} type='number'/>
                 </Form.Field>
                 <Form.Field>
-                    <Checkbox label='Eu concordo com o Termos e Condições' onChange={(e) => setCheckbox(!checkbox)}/>
+                    <label>Telefone</label>
+                    <input placeholder='(31)98266-6635' onChange={(e) => setTelefone(e.target.value)} type='tel'/>
+                </Form.Field>
+                <Form.Field>
+                    <Checkbox label='Possui algum tipo de DST?' onChange={(e) => setCheckbox(!checkbox)}/>
                 </Form.Field>
                 <Button onClick={verifyData} type='Login' className='btn-confirm'>Cadastrar</Button>
             </Form>

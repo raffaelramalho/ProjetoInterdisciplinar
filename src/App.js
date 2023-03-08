@@ -1,22 +1,31 @@
 import "./App.css";
+
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import { Container } from "semantic-ui-react";
+
+//Páginas
 import Create from "./components/create";
 import Read from "./components/read";
 import Update from "./components/update";
-import { Routes, Route } from "react-router-dom";
-import { Divider } from "semantic-ui-react";
+import Home from "./components/home";
+import About from "./components/about";
+
 
 function App() {
   return (
-    <div className="main">
-      <Routes>
-            <Route path="/">
-            
-                  <Route index path="read" element={<Read />} />
-                  <Route exact path="create" element={<Create />} />
-                  <Route path="update" element={<Update />} />
-            
-            </Route>
-      </Routes>
+    <div className="App main">
+      <Navbar />
+      <Container className="">
+        <Routes>
+          <Route path="/" element={<Read />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/update" element={<Update />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          
+        </Routes>
+      </Container>
     </div>
   );
 }
