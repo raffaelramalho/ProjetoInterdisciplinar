@@ -1,6 +1,9 @@
 # Detalhes
 
-Alunos: Rafael Ramalho Rosa E02152.\
+Alunos: Rafael Ramalho Rosa E02152\
+Gustavo\
+Luiggi\
+Lucas Coelho
 
 ## Técnologias
 
